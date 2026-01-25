@@ -1,0 +1,14 @@
+from sklearn import cluster, datasets, mixture
+import matplotlib.pyplot as plt
+import numpy as np 
+
+n_samples = 500
+
+blobs = datasets.make_blobs(n_samples=n_samples, cluster_std=[1.0, 2.0, 3.0])
+
+random_state = 170
+X,y = datasets.make_blobs(n_samples=n_samples)
+transformation = [[0.6, -0.6], [-0.4,0.8]]
+x_aniso = np.dot(X, transformation)
+plt.scatter(blobs[0][:,0], blobs[0][:,1], c=blobs[1], edgecolors="k", cmap="cool")
+plt.show()
